@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
       <Navv/>
-      <ItemListContainer nombre="Tia Pato"/>
+      <ItemListContainer nombre="E-commerce Tia Pato"/>
     </div>
   );
 }
