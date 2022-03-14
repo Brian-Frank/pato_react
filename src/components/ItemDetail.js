@@ -1,7 +1,7 @@
 import React from 'react'
 import { Card, Button } from 'react-bootstrap';
 
-const Item = ({nombre, precio, imagen}) => {
+const ItemDetail = ({nombre, precio, imagen}) => {
     return (
         <Card style={{ width: '18rem' }}>
             <Card.Img variant="top" src={imagen}/>
@@ -14,4 +14,4 @@ const Item = ({nombre, precio, imagen}) => {
     )
 }
 
-export default Item
+export default ItemDetail
