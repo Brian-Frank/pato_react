@@ -1,7 +1,7 @@
 import React from 'react'
-import { Card, Button } from 'react-bootstrap';
 import { useState, useEffect } from "react"
-
+import { toast } from 'react-toastify';
+import ItemDetail from './ItemDetail';
 
 
 const ItemDetailContainer = () => {
@@ -41,6 +41,7 @@ const ItemDetailContainer = () => {
         const promesa = new Promise((res, rej) => {
             setTimeout(() => {
                 res(productosIniciales)
+                rej(productosIniciales)
             }, 3000)
         })
 
@@ -49,31 +50,17 @@ const ItemDetailContainer = () => {
                 setProductos(productosIniciales)
             })
             .catch((errorDeLaApi) => {
-                console.log(errorDeLaApi)
+                toast.error("Error en cargar los productos")
             })
             .finally(() => {
                 setLoading(false)
             })
     })
 
-
-
     return (
         <div>
-            <p>{loading ? "Cargando..." : "Productos:"}</p>
-            <ul id='card'>
-                {productos.map((productos) => {
-                    return <Card style={{ width: '18rem' }}>
-                        <Card.Img variant="top" src={productos.imagen} />
-                        <Card.Body >
-                            <Card.Title>{productos.nombre}</Card.Title>
-                            <Card.Text>{productos.detalle}</Card.Text>
-                            <Button variant="primary">Comprar</Button>
-                        </Card.Body>
-                    </Card>
-                })}
-            </ul>
-
+            <p className='text'>{loading ? "Cargando..." : "Productos:"}</p>
+            <ItemDetail productos={productos}/>
         </div>
     )
 }

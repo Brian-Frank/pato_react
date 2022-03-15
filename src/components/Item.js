@@ -1,16 +1,19 @@
 import React from 'react'
 import { Card, Button } from 'react-bootstrap';
 
-const Item = ({nombre, precio, imagen}) => {
+const Item = ({ producto }) => {
     return (
-        <Card style={{ width: '18rem' }}>
-            <Card.Img variant="top" src={imagen}/>
-            <Card.Body>
-                <Card.Title>{nombre}</Card.Title>
-                <Card.Text>${precio}</Card.Text>
-                <Button variant="primary">Comprar</Button>
-            </Card.Body>
-        </Card>
+        <ul>
+            <Card border="danger" style={{ width: '20rem' }}>
+                <Card.Img variant="top" src={producto.imagen} />
+                <Card.Body>
+                    <Card.Title>{producto.nombre}</Card.Title>
+                    <Card.Text>${producto.precio}</Card.Text>
+                    <Card.Text>{producto.detalle}</Card.Text>
+                    <Button variant="primary">Comprar</Button>
+                </Card.Body>
+            </Card>
+        </ul>
     )
 }
 
