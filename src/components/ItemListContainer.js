@@ -2,6 +2,7 @@ import React from 'react'
 import { useState, useEffect } from "react"
 import { toast } from 'react-toastify';
 import ItemDetail from './ItemDetail';
+import ItemList from './ItemList';
 
 
 const ItemListContainer = () => {
@@ -12,6 +13,7 @@ const ItemListContainer = () => {
             nombre: "torta 1",
             detalle: "Destalles del producto",
             precio: 100,
+            categoria:"torta",
             stock: 6
         },
         {
@@ -20,6 +22,7 @@ const ItemListContainer = () => {
             nombre: "torta 2",
             detalle: "Destalles del producto",
             precio: 200,
+            categoria:"torta",
             stock: 5
         },
         {
@@ -28,6 +31,7 @@ const ItemListContainer = () => {
             nombre: "torta 3",
             detalle: "Destalles del producto",
             precio: 300,
+            categoria:"torta",
             stock: 7
         },
         {
@@ -36,6 +40,7 @@ const ItemListContainer = () => {
             nombre: "Bandeja 1",
             detalle: "Destalles del producto",
             precio: 600,
+            categoria:"bandeja",
             stock: 5
         },
         {
@@ -44,6 +49,7 @@ const ItemListContainer = () => {
             nombre: "Bandeja 2",
             detalle: "Destalles del producto",
             precio: 630,
+            categoria:"bandeja",
             stock: 5
         },
         {
@@ -52,6 +58,7 @@ const ItemListContainer = () => {
             nombre: "Bandeja 3",
             detalle: "Destalles del producto",
             precio: 660,
+            categoria:"bandeja",
             stock: 5
         },
     ]
@@ -84,7 +91,7 @@ const ItemListContainer = () => {
     return (
         <div>
             <p className='text'>{loading ? "Cargando..." : "Productos:"}</p>
-            <ItemDetail productos={productos}/>
+            <ItemList productos={productos}/>
         </div>
     )
 }

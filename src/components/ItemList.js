@@ -1,12 +1,14 @@
-<ul id='card'>
-{productos.map((productos) => {
-    return <Card style={{ width: '18rem' }}>
-        <Card.Img variant="top" src={productos.imagen} />
-        <Card.Body >
-            <Card.Title>{productos.nombre}</Card.Title>
-            <Card.Text>{productos.detalle}</Card.Text>
-            <Button variant="primary">Comprar</Button>
-        </Card.Body>
-    </Card>
-})}
-</ul>
+import React from 'react'
+import Item from './Item';
+
+const ItemList = ({productos}) => {
+    return (
+        <ul id='card'>
+            {productos.map((producto)=>{
+                return <Item key={producto.id} producto={producto}/>
+            })}
+        </ul>
+    )
+}
+
+export default ItemList

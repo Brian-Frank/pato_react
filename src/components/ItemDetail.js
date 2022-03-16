@@ -1,12 +1,18 @@
 import React from 'react'
-import Item from './Item';
+import { Card, Button } from 'react-bootstrap';
 
-const ItemDetail = ({productos}) => {
+const ItemDetail = ({ producto }) => {
     return (
-        <ul id='card'>
-            {productos.map((producto)=>{
-                return <Item key={producto.id} producto={producto}/>
-            })}
+        <ul>
+            <Card border="danger" style={{ width: '20rem' }}>
+                <Card.Img variant="top" src={producto.imagen} />
+                <Card.Body>
+                    <Card.Title>{producto.nombre}</Card.Title>
+                    <Card.Text>${producto.precio}</Card.Text>
+                    <Card.Text>{producto.detalle}</Card.Text>
+                    <Button variant="primary">Comprar</Button>
+                </Card.Body>
+            </Card>
         </ul>
     )
 }
