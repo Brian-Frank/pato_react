@@ -1,4 +1,4 @@
-{/* <ul id='card'>
+<ul id='card'>
 {productos.map((productos) => {
     return <Card style={{ width: '18rem' }}>
         <Card.Img variant="top" src={productos.imagen} />
@@ -9,4 +9,4 @@
         </Card.Body>
     </Card>
 })}
-</ul> */}
+</ul>

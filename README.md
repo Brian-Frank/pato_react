@@ -1,2 +1,1 @@
-E-commerce Tia Pato.
-Emprendimiento familiar de pasteleria.
+E-commerce Tia Pato. Emprendimiento familiar de pasteleria.
