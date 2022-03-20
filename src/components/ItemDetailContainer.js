@@ -66,19 +66,20 @@ const ItemDetailContainer = () => {
     const [loading, setLoading] = useState(true)
     const [productos, setProductos] = useState([])
 
+    const id= 6;
+
     useEffect(() => {
 
 
-        const promesa = new Promise((res, rej) => {
+        const promesa = new Promise((res) => {
             setTimeout(() => {
-                res(productosIniciales)
-                rej(productosIniciales)
-            }, 3000)
-        })
+                res(productosIniciales);
+            }, 3000);
+        });
 
         promesa
             .then((respuestaDeLaApi) => {
-                setProductos(productosIniciales)
+                setProductos(respuestaDeLaApi.find((product) => product.id === +id))
             })
             .catch((errorDeLaApi) => {
                 toast.error("Error en cargar los productos")
@@ -86,12 +87,12 @@ const ItemDetailContainer = () => {
             .finally(() => {
                 setLoading(false)
             })
-    },[])
+    },[]);
 
     return (
         <div>
             <p className='text'>{loading ? "Cargando..." : "Productos:"}</p>
-            <ItemList productos={productos}/>
+            <ItemDetail productos={productos}/>
         </div>
     )
 }

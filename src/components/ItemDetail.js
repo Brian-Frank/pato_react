@@ -1,15 +1,15 @@
 import React from 'react'
 import { Card, Button } from 'react-bootstrap';
 
-const ItemDetail = ({ producto }) => {
+const ItemDetail = ({ productos }) => {
     return (
         <ul>
             <Card border="danger" style={{ width: '20rem' }}>
-                <Card.Img variant="top" src={producto.imagen} />
+                <Card.Img variant="top" src={productos.imagen} />
                 <Card.Body>
-                    <Card.Title>{producto.nombre}</Card.Title>
-                    <Card.Text>${producto.precio}</Card.Text>
-                    <Card.Text>{producto.detalle}</Card.Text>
+                    <Card.Title>{productos.nombre}</Card.Title>
+                    <Card.Text>${productos.precio}</Card.Text>
+                    <Card.Text>{productos.detalle}</Card.Text>
                     <Button variant="primary">Comprar</Button>
                 </Card.Body>
             </Card>
