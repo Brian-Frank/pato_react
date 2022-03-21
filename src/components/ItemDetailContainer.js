@@ -3,6 +3,7 @@ import { useState, useEffect } from "react"
 import { toast } from 'react-toastify';
 import ItemDetail from './ItemDetail';
 import ItemList from './ItemList';
+import { useParams } from "react-router-dom";
 
 
 const ItemDetailContainer = () => {
@@ -13,7 +14,7 @@ const ItemDetailContainer = () => {
             nombre: "torta 1",
             detalle: "Destalles del producto",
             precio: 100,
-            categoria:"torta",
+            categoria: "torta",
             stock: 6
         },
         {
@@ -22,7 +23,7 @@ const ItemDetailContainer = () => {
             nombre: "torta 2",
             detalle: "Destalles del producto",
             precio: 200,
-            categoria:"torta",
+            categoria: "torta",
             stock: 5
         },
         {
@@ -31,7 +32,7 @@ const ItemDetailContainer = () => {
             nombre: "torta 3",
             detalle: "Destalles del producto",
             precio: 300,
-            categoria:"torta",
+            categoria: "torta",
             stock: 7
         },
         {
@@ -40,7 +41,7 @@ const ItemDetailContainer = () => {
             nombre: "Bandeja 1",
             detalle: "Destalles del producto",
             precio: 600,
-            categoria:"bandeja",
+            categoria: "bandeja",
             stock: 5
         },
         {
@@ -49,7 +50,7 @@ const ItemDetailContainer = () => {
             nombre: "Bandeja 2",
             detalle: "Destalles del producto",
             precio: 630,
-            categoria:"bandeja",
+            categoria: "bandeja",
             stock: 5
         },
         {
@@ -58,15 +59,15 @@ const ItemDetailContainer = () => {
             nombre: "Bandeja 3",
             detalle: "Destalles del producto",
             precio: 660,
-            categoria:"bandeja",
+            categoria: "bandeja",
             stock: 5
         },
     ]
 
     const [loading, setLoading] = useState(true)
     const [productos, setProductos] = useState([])
-
-    const id= 6;
+    const params = useParams();
+    const categoria = params.id;
 
     useEffect(() => {
 
@@ -78,8 +79,19 @@ const ItemDetailContainer = () => {
         });
 
         promesa
-            .then((respuestaDeLaApi) => {
-                setProductos(respuestaDeLaApi.find((product) => product.id === +id))
+            // .then((respuestaDeLaApi) => {
+            //     setProductos(respuestaDeLaApi.find((product) => product.id === +id))
+            // })
+            .then((res) => {
+                setLoading(true);
+                if (categoria) {
+                    const productoFiltro = res.filter(
+                        (productos) => categoria === productos.categoria
+                    );
+                    setProductos(productoFiltro);
+                } else {
+                    setProductos(res);
+                }
             })
             .catch((errorDeLaApi) => {
                 toast.error("Error en cargar los productos")
@@ -87,12 +99,12 @@ const ItemDetailContainer = () => {
             .finally(() => {
                 setLoading(false)
             })
-    },[]);
+    }, [categoria]);
 
     return (
         <div>
             <p className='text'>{loading ? "Cargando..." : "Productos:"}</p>
-            <ItemDetail productos={productos}/>
+            <ItemDetail productos={productos} />
         </div>
     )
 }

@@ -3,7 +3,7 @@ import { useState, useEffect } from "react"
 import { toast } from 'react-toastify';
 import ItemDetail from './ItemDetail';
 import ItemList from './ItemList';
-
+import { useParams } from "react-router-dom";
 
 const ItemListContainer = () => {
     let productosIniciales = [
@@ -65,14 +65,15 @@ const ItemListContainer = () => {
 
     const [loading, setLoading] = useState(true)
     const [productos, setProductos] = useState([])
+    
 
     useEffect(() => {
 
 
-        const promesa = new Promise((res, rej) => {
+        const promesa = new Promise((res) => {
             setTimeout(() => {
                 res(productosIniciales)
-                rej(productosIniciales)
+
             }, 3000)
         })
 
