@@ -8,8 +8,8 @@ const Navv = () => {
         <Navbar bg="primary" variant="dark">
                 <Nav.Link as={Link} to="/" id='home' >Tia Pato</Nav.Link>
                 <Nav className="me-auto">
-                    <Nav.Link as={Link} to="tortas" id='nav'>Tortas</Nav.Link>
-                    <Nav.Link as={Link} to="bandejas"id='nav'>Bandejas</Nav.Link>
+                    <Nav.Link as={Link} to="/category/torta" id='nav'>Tortas</Nav.Link>
+                    <Nav.Link as={Link} to="category/bandeja"id='nav'>Bandejas</Nav.Link>
                 </Nav>
                 <CartWidget/>
         </Navbar>

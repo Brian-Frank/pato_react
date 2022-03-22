@@ -66,8 +66,8 @@ const ItemDetailContainer = () => {
 
     const [loading, setLoading] = useState(true)
     const [productos, setProductos] = useState([])
-    const params = useParams();
-    const categoria = params.id;
+    const {id} = useParams();
+    
 
     useEffect(() => {
 
@@ -84,9 +84,9 @@ const ItemDetailContainer = () => {
             // })
             .then((res) => {
                 setLoading(true);
-                if (categoria) {
-                    const productoFiltro = res.filter(
-                        (productos) => categoria === productos.categoria
+                if (id) {
+                    const productoFiltro = res.find(
+                        (productos) => productos.id === +id
                     );
                     setProductos(productoFiltro);
                 } else {
@@ -99,7 +99,7 @@ const ItemDetailContainer = () => {
             .finally(() => {
                 setLoading(false)
             })
-    }, [categoria]);
+    }, [id]);
 
     return (
         <div>

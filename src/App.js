@@ -16,8 +16,8 @@ function App() {
         <Navv />
         <Routes>
           <Route path='/' element={<ItemListContainer />} />
-          <Route path='/tortas' element={<ItemDetailContainer />} />
-          <Route path='/bandejas' element={<ItemDetailContainer />} />
+          <Route path='/item/:id' element={<ItemDetailContainer />} />
+          <Route path='/category/:id' element={<ItemDetailContainer />} />
           <Route path='/carrito' element={<Carrito />} />
         </Routes>
         <ToastContainer />

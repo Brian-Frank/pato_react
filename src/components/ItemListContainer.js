@@ -65,6 +65,7 @@ const ItemListContainer = () => {
 
     const [loading, setLoading] = useState(true)
     const [productos, setProductos] = useState([])
+    const {id} = useParams()
     
 
     useEffect(() => {
@@ -79,7 +80,7 @@ const ItemListContainer = () => {
 
         promesa
             .then((respuestaDeLaApi) => {
-                setProductos(productosIniciales)
+                setProductos(id?respuestaDeLaApi.filter((producto) => producto.categoria == id ): respuestaDeLaApi)
             })
             .catch((errorDeLaApi) => {
                 toast.error("Error en cargar los productos")
@@ -87,7 +88,7 @@ const ItemListContainer = () => {
             .finally(() => {
                 setLoading(false)
             })
-    },[])
+    },[id])
 
     return (
         <div>
