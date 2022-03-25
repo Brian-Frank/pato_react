@@ -79,9 +79,6 @@ const ItemDetailContainer = () => {
         });
 
         promesa
-            // .then((respuestaDeLaApi) => {
-            //     setProductos(respuestaDeLaApi.find((product) => product.id === +id))
-            // })
             .then((res) => {
                 setLoading(true);
                 if (id) {

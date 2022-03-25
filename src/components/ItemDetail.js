@@ -8,10 +8,12 @@ const ItemDetail = ({ productos }) => {
 
     const [carrito, setCarrito] = useState(false)
 
-    const onAdd = () => {
+    const onAdd = (count) => {
+
+        console.log({item:productos, cantidad:count})
+
         setCarrito(!carrito)
         toast.success("Compra Exitosa !", {
-            position: toast
         });
 
     }

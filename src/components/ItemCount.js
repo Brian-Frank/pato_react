@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button } from 'react-bootstrap';
 
-const ItemCount = ({ stock, initial, carrito }) => {
+const ItemCount = ({ stock, initial, carrito, onAdd }) => {
 
     const [count, setCount] = useState(initial);
 
@@ -23,7 +23,8 @@ const ItemCount = ({ stock, initial, carrito }) => {
         setCount(0)
     }
 
-    const onAdd = () => {
+    const addItem = () => {
+        onAdd(count)
         alert(`sumaste ${count} al carrito`)
     }
 
