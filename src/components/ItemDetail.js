@@ -1,16 +1,19 @@
 import React from 'react'
 import { Card, Button, Link } from 'react-bootstrap';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { toast } from 'react-toastify';
 import ItemCount from "./ItemCount";
+import { cartContext } from "./CartContext";
 
 const ItemDetail = ({ productos }) => {
 
     const [carrito, setCarrito] = useState(false)
 
+    const ProviderContexto = useContext(cartContext)
+
     const onAdd = (count) => {
 
-        console.log({item:productos, cantidad:count})
+        ProviderContexto.addItem({item:productos, cantidad:count})
 
         setCarrito(!carrito)
         toast.success("Compra Exitosa !", {
