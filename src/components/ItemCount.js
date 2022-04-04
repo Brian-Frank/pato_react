@@ -26,13 +26,12 @@ const ItemCount = ({ stock, initial, carrito, onAdd }) => {
 
     const addItem = () => {
         onAdd(count)
-        alert(`sumaste ${count} al carrito`)
     }
 
     return (
         <>
             <div>
-                <Button onClick={onAdd} >{!carrito ? 'Comprar' : ''}</Button>
+                <Button onClick={addItem} >{!carrito ? 'Comprar' : ''}</Button>
                 <h3>{count}</h3>
                 <button onClick={incrementar}>sumar</button>
                 <button onClick={decrementar}>Restar</button>

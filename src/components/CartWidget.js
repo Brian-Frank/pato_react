@@ -9,7 +9,7 @@ const CartWidget = () => {
     return (
         <div className='Cart'>
             <IconContext.Provider value={{ size: "2.5rem" }}>
-                <Nav.Link as={Link} to="/Cart" id='nav'>
+            <Nav.Link as={Link} to="/Cart" id='nav'>
                     <AiOutlineShoppingCart />Carrito
                 </Nav.Link>
             </IconContext.Provider>

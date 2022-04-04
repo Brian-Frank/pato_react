@@ -3,17 +3,19 @@ import { Card, Button, Link } from 'react-bootstrap';
 import { useState, useContext } from 'react';
 import { toast } from 'react-toastify';
 import ItemCount from "./ItemCount";
-import { cartContext } from "./CartContext";
+import { UseCartContext } from "./CartContext";
 
 const ItemDetail = ({ productos }) => {
 
     const [carrito, setCarrito] = useState(false)
 
-    const ProviderContexto = useContext(cartContext)
+    const { addItem } = UseCartContext()
 
     const onAdd = (count) => {
+        const item = productos;
+        const cantidad = count;
 
-        ProviderContexto.addItem({item:productos, cantidad:count})
+        addItem(item, cantidad)
 
         setCarrito(!carrito)
         toast.success("Compra Exitosa !", {
@@ -31,7 +33,7 @@ const ItemDetail = ({ productos }) => {
                     <Card.Text>${productos.precio}</Card.Text>
                     <Card.Text>{productos.detalle}</Card.Text>
                     {/* <Button variant="primary">Comprar</Button> */}
-                    <ItemCount stock={5} initial={1} onAdd= {onAdd} carrito={carrito}/>
+                    <ItemCount stock={5} initial={1} onAdd={onAdd} carrito={carrito} />
                 </Card.Body>
             </Card>
         </ul>

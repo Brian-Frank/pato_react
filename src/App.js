@@ -6,13 +6,13 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Cart from './components/Cart';
-import MiProvider from './components/CartContext';
+import MiProvider, { CartContextProvider } from './components/CartContext';
 
 function App() {
 
   return (
     <div className="App">
-      <MiProvider>
+      <CartContextProvider>
 
         <BrowserRouter>
 
@@ -21,13 +21,13 @@ function App() {
             <Route path='/' element={<ItemListContainer />} />
             <Route path='/item/:id' element={<ItemDetailContainer />} />
             <Route path='/category/:id' element={<ItemDetailContainer />} />
-            <Route path='/cart' element={<Cart />}/>
+            <Route path='/cart' element={<Cart />} />
           </Routes>
           <ToastContainer />
 
         </BrowserRouter>
 
-      </MiProvider>
+      </CartContextProvider>
 
     </div>
   );
