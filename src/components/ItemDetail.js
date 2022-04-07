@@ -31,7 +31,7 @@ const ItemDetail = ({ productos }) => {
                 <Card.Body>
                     <Card.Title>{productos.nombre}</Card.Title>
                     <Card.Text>${productos.precio}</Card.Text>
-                    <Card.Text>{productos.detalle}</Card.Text>
+                    <Card.Text>{productos.descripcion}</Card.Text>
                     {/* <Button variant="primary">Comprar</Button> */}
                     <ItemCount stock={5} initial={1} onAdd={onAdd} carrito={carrito} />
                 </Card.Body>
