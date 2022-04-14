@@ -4,7 +4,7 @@ import { Card} from 'react-bootstrap';
 
 
 const Cart = () => {
-  const { cart, removeItem, clear } = UseCartContext();
+  const { cart, removeItem, clear, } = UseCartContext();
   const [loading, setLoading] = useState(true);
 
   setTimeout(() => {
@@ -23,7 +23,6 @@ const Cart = () => {
                 <Card.Body className='card'>
                   <Card.Text>Precio: ${producto.item.precio}</Card.Text>
                   <Card.Text>Descripción:  {producto.item.descripcion}</Card.Text>
-                  {/* <Link to={`/item/${producto.item.id}`}>Detalles</Link> */}
                   <Card.Text>cantidad:{producto.cantidad}</Card.Text>
                   <button onClick={clear}>Vaciar carrito</button>
 
