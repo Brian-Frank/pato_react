@@ -30,8 +30,10 @@ const ItemDetail = ({ productos }) => {
                 <Card.Img variant="top" src={productos.imagen} />
                 <Card.Body>
                     <Card.Title>{productos.nombre}</Card.Title>
-                    <Card.Text>${productos.precio}</Card.Text>
-                    <Card.Text>{productos.descripcion}</Card.Text>
+                    <Card.Text>Precio:${productos.precio}</Card.Text>
+                    <Card.Text>Descripción:
+                        <br/>{productos.descripcion}
+                    </Card.Text>
                     <ItemCount stock={5} initial={1} onAdd={onAdd} carrito={carrito} />
                 </Card.Body>
             </Card>

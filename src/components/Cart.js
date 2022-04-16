@@ -30,7 +30,8 @@ const Cart = () => {
               </Card >
             ))
           }
-        </div>}
+        </div>
+      }
     </>
   )
 }
