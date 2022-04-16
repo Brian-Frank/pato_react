@@ -25,7 +25,6 @@ const Cart = () => {
                   <Card.Text>Descripción:  {producto.item.descripcion}</Card.Text>
                   <Card.Text>cantidad:{producto.cantidad}</Card.Text>
                   <button onClick={clear}>Vaciar carrito</button>
-
                 </Card.Body>
               </Card >
             ))

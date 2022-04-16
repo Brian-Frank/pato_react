@@ -7,6 +7,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Cart from './components/Cart';
 import MiProvider, { CartContextProvider } from './components/CartContext';
+import Footer from './components/Footer';
+
 
 function App() {
 
@@ -28,6 +30,7 @@ function App() {
         </BrowserRouter>
 
       </CartContextProvider>
+      <Footer/>
 
     </div>
   );
