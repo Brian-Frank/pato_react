@@ -18,7 +18,7 @@ const ItemDetail = ({ productos }) => {
         addItem(item, cantidad)
 
         setCarrito(!carrito)
-        toast.success("Compra Exitosa !", {
+        toast.success("Agregaste al carrito !", {
         });
 
     }
