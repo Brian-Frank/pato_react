@@ -1,8 +1,10 @@
 #card{
+    margin: 5rem;
     display: grid;
     grid-template-columns: repeat(auto-fit , minmax(450px, 1fr));
     grid-gap: 4rem;
     margin-top: 2rem;
+    font-size: 1.5rem;
 }
 
 .text{
@@ -17,4 +19,21 @@
 
 #nav{
     color: black;
+}
+
+.cart1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.5rem;
+    padding: 1rem;
+    font-size: 1.5rem;
+}
+
+.carrito{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    font-size: 1.5rem;
 }

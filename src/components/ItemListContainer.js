@@ -1,7 +1,5 @@
 import React from 'react'
 import { useState, useEffect } from "react"
-import { toast } from 'react-toastify';
-import ItemDetail from './ItemDetail';
 import ItemList from './ItemList';
 import { useParams } from "react-router-dom";
 import { db } from './Firebase';
@@ -23,13 +21,13 @@ export const ItemListContainer = ({ greeting }) => {
 
             getDocs(q)
                 .then((resp) => setProductos(resp.docs.map(p => ({ productos: p.data(), id: p.id }))))
-                .catch((err) => console.log(err))
+
 
         } else {
 
             getDocs(collection(db, "productos"))
                 .then((resp) => setProductos(resp.docs.map(p => ({ productos: p.data(), id: p.id }))))
-                .catch((err) => console.log(err))
+
 
         }
     }, [id])

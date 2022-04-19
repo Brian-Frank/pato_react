@@ -1,6 +1,6 @@
 import React from 'react'
-import { Card, Button, Link } from 'react-bootstrap';
-import { useState, useContext } from 'react';
+import { Card} from 'react-bootstrap';
+import { useState } from 'react';
 import { toast } from 'react-toastify';
 import ItemCount from "./ItemCount";
 import { UseCartContext } from "./CartContext";
@@ -25,7 +25,7 @@ const ItemDetail = ({ productos }) => {
 
 
     return (
-        <ul>
+        <ul className='cart1'>
             <Card border="danger" style={{ width: '20rem' }}>
                 <Card.Img variant="top" src={productos.imagen} />
                 <Card.Body>
