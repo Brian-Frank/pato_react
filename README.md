@@ -21,3 +21,23 @@ Libraries and Frameworks:
 [Link de la pagina](https://cool-sherbet-a257bc.netlify.app)
 
 https://user-images.githubusercontent.com/86387416/164100616-57dac2db-1871-4a89-84f9-cdb286513def.mp4
+
+### install:
+1. Open Git Bash
+2.Change the current working directory to the location where you want to clone the directory
+3.Type git clone, and then paste the URL you copied earlier
+```
+$ git clone https://github.com/Brian-Frank/pato_react.git
+
+```
+4. Hit Enter to create your local clone
+5. Install the necessary repository dependencies. On the command line, run the following command:
+```
+npm install
+```
+6. Start the repository. On the command line, run the command:
+```
+npm start
+```
+
+
