@@ -7,7 +7,7 @@
 
 
 
-´´´
+```
 Libraries and Frameworks:
 * React.js (v17.0.2)
 * React bootstrap (v2.2.0)
@@ -16,7 +16,7 @@ Libraries and Frameworks:
 * Firebase (v9.6.10)
 * React toastify (v8.2.0)
 
-´´´
+```
 
 [Link de la pagina](https://cool-sherbet-a257bc.netlify.app)
 
