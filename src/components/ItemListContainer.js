@@ -21,12 +21,13 @@ export const ItemListContainer = ({ greeting }) => {
 
             getDocs(q)
                 .then((resp) => setProductos(resp.docs.map(p => ({ productos: p.data(), id: p.id }))))
-
+                .catch((err) => console.log(err))
 
         } else {
 
             getDocs(collection(db, "productos"))
                 .then((resp) => setProductos(resp.docs.map(p => ({ productos: p.data(), id: p.id }))))
+                .catch((err) => console.log(err))
 
 
         }

@@ -20,7 +20,7 @@ export const ItemDetailContainer = () => {
         const docRef = doc(db, 'productos', id);
         getDoc(docRef)
             .then((res) => setProductos(res.data()))
-
+            .catch((err) => console.log(err))
 
     }, [id])
     return (
